@@ -129,32 +129,11 @@
 								{$movie->format|htmlentities:3:'UTF-8'}{if $movie->duration && $movie->duration != 0}, {durationConvertion($movie->duration|htmlentities:3:'UTF-8')}{/if}
 							</div>
 							
-							{if $movie->rating && $movie->rating != 0}
-							<div class="rating">
-								<span class="header">{$smarty.const.RATING|htmlentities:3:'UTF-8'}:</span> 
-								{$movie->rating|htmlentities:3:'UTF-8'}
-							</div>
-							{/if}
-							
-							{if $movie->votes && $movie->votes != 0}
-							<div class="votes">
-								<span class="header">{$smarty.const.VOTES|htmlentities:3:'UTF-8'}:</span> 
-								{$movie->votes|htmlentities:3:'UTF-8'}
-							</div>
-							{/if}
-							
 							{if $parental_guidance}
 								<div class="parental_guidance">
 									<span class="header">{$smarty.const.PARENTAL_GUIDANCE|htmlentities:3:'UTF-8'}:</span>
 									PG-{$movie->pg|htmlentities:3:'UTF-8'}
 								</div>
-							{/if}
-							
-							{if $movie->seasons && $movie->seasons != 0}
-							<div class="seasons">
-								<span class="header">{$smarty.const.SEASONS|htmlentities:3:'UTF-8'}:</span> 
-								{$movie->seasons|htmlentities:3:'UTF-8'}
-							</div>
 							{/if}
 							
 							{if $movie->languages && strlen($movie->languages) > 0}
@@ -213,22 +192,6 @@
 							</div>
 							{/if}
 							
-							{if $movie->video && strlen($movie->video) > 0}
-							<div class="video">
-								<span class="header">{$smarty.const.VIDEO|htmlentities:3:'UTF-8'}:</span>
-								{assign var=video value=$movie->getList('video')}
-								{section name=v loop=$video}{if !$smarty.section.v.first}, {/if}{$video[v]|htmlentities:3:'UTF-8'}{/section}
-							</div>
-							{/if}
-							
-							{if $movie->audio && strlen($movie->audio) > 0}
-							<div class="audio">
-								<span class="header">{$smarty.const.AUDIO|htmlentities:3:'UTF-8'}:</span>
-								{assign var=audio value=$movie->getList('audio')}
-								{section name=a loop=$audio}{if !$smarty.section.a.first}, {/if}{$audio[a]|htmlentities:3:'UTF-8'}{/section}
-							</div>
-							{/if}
-							
 							{if $movie->loaned}
 							<div class="loaned">
 								{$smarty.const.LOANED_OUT|htmlentities:3:'UTF-8'}{if $movie->loanname != ""} {$smarty.const.TO|htmlentities:3:'UTF-8'} {$movie->loanname|htmlentities:3:'UTF-8'}{/if}{if $movie->loandate != "0000-00-00"} {$smarty.const.ON|htmlentities:3:'UTF-8'} {$movie->loandate|htmlentities:3:'UTF-8'}{/if}
@@ -262,23 +225,6 @@
 					</div>
 					{/if}
 					
-					{if $movie->cast && strlen($movie->cast) > 0}
-					<div class="box">
-						<div class="box-header with-border">
-							<h3 class="box-title">{$smarty.const.CAST|htmlentities:3:'UTF-8'}</h3>
-						</div>
-						<div class="box-body cast">
-							<div class="castlist">
-								<ul>
-								{assign var=cast value=$movie->getList('cast')}
-								{section name=c loop=$cast max=$numberOfCast}
-									<li><a class="people-link" href="{$webroot}#!/search/{$cast[c]|htmlspecialchars:2:'UTF-8'|rawurlencode}/page/0/scroll/top">{$cast[c]|htmlentities:3:'UTF-8'}</a></li>
-								{/section}
-								</ul>
-							</div>
-						</div>
-					</div>
-					{/if}
 					{if $movie->plots && strlen($movie->plots) > 0}
 					<div class="box collapsed-box">
 						<div class="box-header with-border">
