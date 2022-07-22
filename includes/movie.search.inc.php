@@ -133,7 +133,7 @@ if(($loggedin || $guestview) && isset($refreshMovieList)) {
 	if($templateName === 'poster' || $templateName === 'postertitle')
 		$columns = array('`id`','`name`','`year`','`seen`','`own`','`favourite`','`tv`');
 	if($templateName === 'posterlist' || $templateName === 'listplot')
-		$columns = array('`id`','`name`','`year`','`duration`','`rating`','`languages`','`plotoutline`','`seen`','`own`','`favourite`','`tv`','`pg`');
+		$columns = array('`id`','`name`','`year`','`duration`','`rating`','`languages`','`plots`','`taglines`','`seen`','`own`','`favourite`','`tv`','`pg`');
 	if($templateName === 'list')
 		$columns = array('`id`','`name`','`year`','`duration`','`rating`','`languages`','`seen`','`own`','`favourite`','`tv`','`pg`');
 

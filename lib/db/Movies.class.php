@@ -98,7 +98,8 @@ class Movies extends Database {
 				$query .= "`name` LIKE ? OR ";		$bindings[] = '%'.$word.'%';
 				$query .= "`aka` LIKE ? OR ";		$bindings[] = '%'.$word.'%';
 				$query .= "`year` LIKE ? OR ";		$bindings[] = '%'.$word.'%';
-				$query .= "`plotoutline` LIKE ?";	$bindings[] = '%'.$word.'%';
+				$query .= "`plots` LIKE ? OR";	$bindings[] = '%'.$word.'%';
+				$query .= "`taglines` LIKE ?";	$bindings[] = '%'.$word.'%';
 				$query .= ")";
 
 				// Next word

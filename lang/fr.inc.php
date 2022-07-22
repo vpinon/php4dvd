@@ -95,6 +95,7 @@ define("OWN",										"Possédé");
 define("NOT_OWN",									"Non possédé");
 define("DISC",									"Disque");
 define("FILE",									"Fichier");
+define("BOTH",									"Les deux");
 define("DO_YOU_OWN_THIS",							"Le possédez-vous?");
 define("SEEN",										"Vu");
 define("UNSEEN",									"Non vu");

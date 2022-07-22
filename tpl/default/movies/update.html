@@ -152,14 +152,14 @@
 								<div class="form-group has-feedback">
 									<label class="{$colWidthSmall} control-label">{$smarty.const.OWN|htmlentities:3:'UTF-8'}</label>
 									<div class="{$colWidthLarge}">
-										<label class="radio-inline" for="own_no">
-										  <input type="radio" name="own" id="own_no" value="0"{if !isset($movie) || !$movie->own} checked{/if}> {$smarty.const.NO|htmlentities:3:'UTF-8'}
+										<label class="radio-inline" for="own_file">
+										  <input type="radio" name="own" id="own_file" value="0"{if !isset($movie) || !$movie->own} checked{/if}> {$smarty.const.FILE|htmlentities:3:'UTF-8'}
 										</label>
 										<label class="radio-inline" for="own_disc">
 										  <input type="radio" name="own" id="own_disc" value="1"{if isset($movie) && $movie->own == 1} checked{/if}> {$smarty.const.DISC|htmlentities:3:'UTF-8'}
 										</label>
-										<label class="radio-inline" for="own_file">
-										  <input type="radio" name="own" id="own_file" value="2"{if isset($movie) && !$movie->own == 2} checked{/if}> {$smarty.const.FILE|htmlentities:3:'UTF-8'}
+										<label class="radio-inline" for="own_both">
+										  <input type="radio" name="own" id="own_both" value="2"{if isset($movie) && !$movie->own == 2} checked{/if}> {$smarty.const.BOTH|htmlentities:3:'UTF-8'}
 										</label>
 									</div>
 								</div>
@@ -236,12 +236,6 @@
 									</div>
 								</div>
 								<div class="form-group has-feedback">
-									<label for="plotoutline" class="{$colWidthSmall} control-label">{$smarty.const.PLOT_OUTLINE|htmlentities:3:'UTF-8'}</label>
-									<div class="{$colWidthLarge}">
-										<textarea name="plotoutline" id="plotoutline" rows="5" class="form-control" placeholder="{$smarty.const.PLOT_OUTLINE|htmlentities:3:'UTF-8'}">{if isset($movie)}{$movie->plotoutline|htmlentities:3:'UTF-8'}{/if}</textarea>
-									</div>
-								</div>
-								<div class="form-group has-feedback">
 									<label for="plots" class="{$colWidthSmall} control-label">{$smarty.const.PLOTS|htmlentities:3:'UTF-8'}</label>
 									<div class="{$colWidthLarge}">
 										<textarea name="plots" id="plots" rows="5" class="form-control" placeholder="{$smarty.const.PLOTS|htmlentities:3:'UTF-8'}">{if isset($movie)}{$movie->plots|htmlentities:3:'UTF-8'}{/if}</textarea>
@@ -251,12 +245,6 @@
 									<label for="languages" class="{$colWidthSmall} control-label">{$smarty.const.LANGUAGES|htmlentities:3:'UTF-8'}</label>
 									<div class="{$colWidthLarge}">
 										<textarea name="languages" id="languages" rows="5" class="form-control" placeholder="{$smarty.const.LANGUAGES|htmlentities:3:'UTF-8'}">{if isset($movie)}{$movie->languages|htmlentities:3:'UTF-8'}{/if}</textarea>
-									</div>
-								</div>
-								<div class="form-group has-feedback">
-									<label for="subtitles" class="{$colWidthSmall} control-label">{$smarty.const.SUBTITLES|htmlentities:3:'UTF-8'}</label>
-									<div class="{$colWidthLarge}">
-										<textarea name="subtitles" id="subtitles" rows="5" class="form-control" placeholder="{$smarty.const.SUBTITLES|htmlentities:3:'UTF-8'}">{if isset($movie)}{$movie->subtitles|htmlentities:3:'UTF-8'}{/if}</textarea>
 									</div>
 								</div>
 								<div class="form-group has-feedback">
